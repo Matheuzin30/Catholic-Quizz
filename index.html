@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizz Católico</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/question_mark_24dp_FILL0_wght400_GRAD0_opsz24.png" type="image/png">
+    <script src="Js/script.js" defer></script>
+</head>
+
+<body>
+    <h1 id="main-title">Quizz sobre a igreja católica</h1>
+    <div id="score-container">
+        <p id="display-score"><span>90</span>%</p>
+        <p>Você acertou <span id="correct-answer">0</span> de  <span id="questions=qty">10</span></p>
+        <button id="restart">Reiniciar o Quizz</button>
+    </div>
+
+    <div id="quizz-container">
+        <p id="question">
+            <span id="questions-number">1</span> - <span id="question-text">Qual foi o primeiro papa?</span>
+        </p>
+        <div id="answers-box">
+            <button class="correct-answer"><Span class="btn-letter">A</Span> <span class="question-answer">Pedro</span></button>
+            <button class="wrong-answer"><Span class="btn-letter">B</Span> <span class="question-answer">Jesus</span></button>
+            <button><Span class="btn-letter">C</Span> <span class="question-answer">João</span></button>
+            <button><Span class="btn-letter">D</Span> <span class="question-answer">Paulo</span></button>
+        </div>
+    </div>
+
+
+    <button class="answer-template hide"><Span class="btn-letter">A</Span> <span class="question-answer">Pedro</span></button>
+</body>
+</html>
