@@ -11,19 +11,20 @@
 
 <body>
     <h1 id="main-title">Quizz sobre a igreja católica</h1>
-    <div id="score-container">
+    <div id="score-container" class="hide">
+        <h2>Parabéns!!</h2>
         <p id="display-score"><span>90</span>%</p>
-        <p>Você acertou <span id="correct-answer">0</span> de  <span id="questions=qty">10</span></p>
+        <p>Você acertou <span id="correct-answers">0</span> de  <span id="questions-qty">10</span></p>
         <button id="restart">Reiniciar o Quizz</button>
     </div>
 
     <div id="quizz-container">
         <p id="question">
-            <span id="questions-number">1</span> - <span id="question-text">Qual foi o primeiro papa?</span>
+            <span id="question-number">1</span> - <span id="question-text">Qual foi o primeiro papa?</span>
         </p>
         <div id="answers-box">
-            <button class="correct-answer"><Span class="btn-letter">A</Span> <span class="question-answer">Pedro</span></button>
-            <button class="wrong-answer"><Span class="btn-letter">B</Span> <span class="question-answer">Jesus</span></button>
+            <button><Span class="btn-letter">A</Span> <span class="question-answer">Pedro</span></button>
+            <button><Span class="btn-letter">B</Span> <span class="question-answer">Jesus</span></button>
             <button><Span class="btn-letter">C</Span> <span class="question-answer">João</span></button>
             <button><Span class="btn-letter">D</Span> <span class="question-answer">Paulo</span></button>
         </div>
