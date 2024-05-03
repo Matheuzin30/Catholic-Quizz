@@ -158,10 +158,7 @@ const questions = [
             "answer": "Ostensório",
             "correct": false
         },
-        {
-            "answer": "Cura, Confirmação, Eucaristia, Penitência, Unção dos Enfermos, Ordem, Matrimônio",
-            "correct": false
-        },      
+        
         ]
     },
 
@@ -185,7 +182,70 @@ function createQuestion(i){
 
     questionText.textContent = questions[i].question;
     questionNumber.textContent = i + 1;
+
+    questions[i].answers.forEach(function(answer, i){
+
+        const answerTemplate = document.querySelector(".answer-template").cloneNode(true);
+
+        const letterBtn = answerTemplate.querySelector(".btn-letter");
+        const answerText = answerTemplate.querySelector(".question-answer");
+
+        letterBtn.textContent = letter[i];
+        answerText.textContent = answer['answer'];
+
+        answerTemplate.setAttribute("correct-answer", answer["correct"]);
+
+
+        answerTemplate.classList.remove("hide");
+        answerTemplate.classList.remove("answer-template");
+
+        answersBox.appendChild(answerTemplate);
+
+        answerTemplate.addEventListener("click", function(){
+            checkAnswer(this);
+        })
+
+    });
+
+        actualQuestion++;
         
+}
+
+function checkAnswer(btn){
+
+    const buttons = answersBox.querySelectorAll("button");
+
+    buttons.forEach(function(button){
+        
+        if(button.getAttribute("correct-answer") === "true"){
+
+            button.classList.add("correct-answer");
+
+            if(btn === button){
+
+                points++;
+            }
+
+        } else{
+            button.classList.add("wrong-answer");
+        }
+    });
+
+    nextQuestion();
+
+
+}
+
+function nextQuestion(){
+    setTimeout(function(){
+
+        if(actualQuestion >= question.length){
+
+        }
+
+        createQuestion(actualQuestion);
+
+    }, 1500)
 }
 
 init();
