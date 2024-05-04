@@ -239,13 +239,48 @@ function checkAnswer(btn){
 function nextQuestion(){
     setTimeout(function(){
 
-        if(actualQuestion >= question.length){
+        if(actualQuestion >= questions.length){
+
+            showSucessMessage();
+            return;
 
         }
 
         createQuestion(actualQuestion);
 
-    }, 1500)
+    }, 1000);
 }
+
+function showSucessMessage(){
+
+    hideOrShowQuizz();
+
+    const score = ((points / questions.length) * 100).toFixed(2);
+
+    const scoreText = ((points / questions.length) * 100).toFixed(2);
+    const displayScore = document.querySelector("#display-score span"); 
+    displayScore.textContent = scoreText; 
+
+    const correctAnswers = document.querySelector("#correct-answers"); 
+    correctAnswers.textContent = points; 
+
+    const questionsQty = document.querySelector("#questions-qty"); 
+    questionsQty.textContent = questions.length; 
+}
+
+function hideOrShowQuizz(){
+    quizzContainer.classList.toggle("hide");
+    scoreContainer.classList.toggle("hide");
+}
+
+const restartBtn = document.querySelector("#restart");
+
+restartBtn.addEventListener("click", function(){
+
+    actualQuestion = 0;
+    points = 0;
+    hideOrShowQuizz();
+    init();
+})
 
 init();
